@@ -24,9 +24,9 @@ const dbname = "Webservice";
 
 // Ansluta till MongoDB
 mongoose.connect(
-    //`mongodb+srv://admin:ltuservice@ltu-rest-ws.mwzyn.mongodb.net/Webservice?retryWrites=true&w=majority`,
-  
-    `mongodb+srv://${username}:${password}@${cluster}.mwzyn.mongodb.net/${dbname}?retryWrites=true&w=majority`, 
+  //`mongodb+srv://admin:ltuservice@ltu-rest-ws.mwzyn.mongodb.net/Webservice?retryWrites=true&w=majority`,
+
+  `mongodb+srv://${username}:${password}@${cluster}.mwzyn.mongodb.net/${dbname}?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -86,6 +86,7 @@ app.use((req, res, next) => {
 //app.use(bodyParser.urlencoded( { extended: false}));
 
 require("./routes/webservice")(app, Module);
+require("./routes/pages")(app, Module);
 
 // Skapa statisk sökväg
 //app.use(express.static(path.join(__dirname, 'public'))); // fixa
@@ -93,6 +94,6 @@ require("./routes/webservice")(app, Module);
 //app.use(cors());
 
 // Starta servern
-app.listen(port, function() {
-    console.log("Server running on port " + port);
-  });
+app.listen(port, function () {
+  console.log("Server running on port " + port);
+});
