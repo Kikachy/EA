@@ -6,75 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>LTU</title>
-
-    <!-- CSS -->
-    <style>
-        .myForm {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-            font-size: 0.8em;
-            width: 30em;
-            padding: 1em;
-        }
-
-        .myForm * {
-            box-sizing: border-box;
-        }
-
-        .myForm label {
-            padding: 0;
-            font-weight: bold;
-            text-align: right;
-            display: block;
-        }
-
-        .myForm input,
-        .myForm select,
-        .myForm textarea {
-            margin-left: 2em;
-            float: right;
-            width: 20em;
-            border: 1px solid #ccc;
-            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-            font-size: 0.9em;
-            padding: 0.3em;
-        }
-
-        .myForm textarea {
-            height: 100px;
-        }
-
-        .myForm button {
-            padding: 1em;
-            border-radius: 0.5em;
-            background: #eee;
-            border: none;
-            font-weight: bold;
-            margin-left: 14em;
-            margin-top: 1.8em;
-        }
-
-        .myForm button:hover {
-            background: #ccc;
-            cursor: pointer;
-        }
-    </style>
+    <script src="static/js/script.js"></script>
+    <link rel="stylesheet" href="static/css/styles.css">
 
 </head>
 
 <body>
-    <form class="myForm" method="get" enctype="application/x-www-form-urlencoded"
-        action="/html/codes/html_form_handler.cfm">
+
+    <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="">
 
         <p>
             <label>Kurskod
-                <select id="pickup_place" name="pickup_place">
+                <select id="select-course" name="course">
                     <option value="" selected="selected">Välj</option>
-                    <option value="D0019N">D0019N</option>
-                    <option value="D0005N">D0005N</option>
-                    <option value="D0004N">D0004N</option>
                 </select>
             </label>
         </p>
+        <script>
+            loadCourses()
+        </script>
 
         <p>
             <label>Modul i Ladok
@@ -120,23 +70,23 @@
             <td>VG</td>
             <td>Attesterad</td>
             <td></td>
-        <tr>
-            <td>
-                <div>
-                    <input type="checkbox" id="studentID" name="studentID">
-                    <label for="studentID">StudentID</label>
-                </div>
-            </td>
-            <td>G</td>
-            <td>
-                <p>
-                    <label>
+            <tr>
+                <td>
+                    <div>
+                        <input type="checkbox" id="studentID" name="studentID">
+                        <label for="studentID">StudentID</label>
+                    </div>
+                </td>
+                <td>G</td>
+                <td>
+                    <p>
+                        <label>
                         <input type="datetime-local" name="pickup_time" required>
                     </label>
-                </p>
-            </td>
-            <td>
-                <label>
+                    </p>
+                </td>
+                <td>
+                    <label>
                     <select id="" name="">
                         <option value="" selected="selected">Välj</option>
                         <option value="U">U</option>
@@ -144,11 +94,13 @@
                         <option value="VG">VG</option>
                     </select>
                 </label>
-            </td>
-            <td>Utkast</td>
-        </tr>
+                </td>
+                <td>Utkast</td>
+            </tr>
 
     </table>
 
-</body>
+    <button class="button button2">Cancel</button>
+    <button class="button button1">Confirm</button>
+
 </html>

@@ -1,6 +1,6 @@
 const entities = require("entities");
 
-module.exports = function (app, Module) {
+module.exports = function (app) {
 
     // Route to serve to client
     app.get('/', function (req, res) {
